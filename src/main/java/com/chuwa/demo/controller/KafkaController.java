@@ -13,8 +13,8 @@ public class KafkaController {
     private KafkaProducerService kafkaProducerService;
 
     @PostMapping("/publish")
-    public String publishMessage(@RequestParam("key") String key, @RequestParam("message") String message) {
-        kafkaProducerService.sendMessage(key, message);
+    public String publishMessage(@RequestParam("message") String message) {
+        kafkaProducerService.sendMessage(message);
         return "Message published successfully";
     }
 }
